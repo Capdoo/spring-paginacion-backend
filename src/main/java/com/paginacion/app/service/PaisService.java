@@ -9,7 +9,7 @@ import com.paginacion.app.repository.PaisRepository;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import org.springframework.data.domain.Page;
+
 import org.springframework.data.domain.Pageable;
 
 @Service
@@ -20,6 +20,7 @@ public class PaisService {
 	PaisRepository paisRepository;
 	
 	public Page<PaisModel> paginas(Pageable pageable){
+		System.out.println(pageable);
 		return paisRepository.findAll(pageable);
 	}
 	
